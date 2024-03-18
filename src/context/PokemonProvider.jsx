@@ -7,16 +7,13 @@ export const PokemonProvider = ({ children }) => {
   const [globalPokemons, setGlobalPokemons] = useState([]);
   const [offset, setOffset] = useState(0);
 
-  // Utilizar CustomHook - useForm
   const { valueSearch, onInputChange, onResetForm } = useForm({
     valueSearch: "",
   });
 
-  // Estados para la aplicación simples
   const [loading, setLoading] = useState(true);
   const [active, setActive] = useState(false);
 
-  // lLamar 50 pokemones a la API
   const getAllPokemons = async (limit = 10) => {
     const baseURL = "https://pokeapi.co/api/v2/";
 
@@ -36,7 +33,6 @@ export const PokemonProvider = ({ children }) => {
     setLoading(false);
   };
 
-  // Llamar todos los pokemones
   const getGlobalPokemons = async () => {
     const baseURL = "https://pokeapi.co/api/v2/";
 
@@ -54,7 +50,6 @@ export const PokemonProvider = ({ children }) => {
     setLoading(false);
   };
 
-  // Llamar a un pokemon por ID
   const getPokemonByID = async (id) => {
     const baseURL = "https://pokeapi.co/api/v2/";
 
@@ -71,12 +66,10 @@ export const PokemonProvider = ({ children }) => {
     getGlobalPokemons();
   }, []);
 
-  // BTN CARGAR MÁS
   const onClickLoadMore = () => {
     setOffset(offset + 10);
   };
 
-  // Filter Function + State
   const [typeSelected, setTypeSelected] = useState({
     grass: false,
     normal: false,
@@ -135,10 +128,10 @@ export const PokemonProvider = ({ children }) => {
         // Loader
         loading,
         setLoading,
-        // Btn Filter
+
         active,
         setActive,
-        // Filter Container Checkbox
+
         handleCheckbox,
         filteredPokemons,
       }}

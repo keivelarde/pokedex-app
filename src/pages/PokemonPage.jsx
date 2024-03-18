@@ -1,9 +1,13 @@
 import React, { useContext, useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { Loader } from "../components";
 import { PokemonContext } from "../context/PokemonContext";
 import { primerMayuscula } from "../helper/helper";
 import ProgressBar from "@ramonak/react-progress-bar";
+import {
+  FaRegArrowAltCircleRight,
+  FaRegArrowAltCircleLeft,
+} from "react-icons/fa";
 
 export const PokemonPage = () => {
   const { getPokemonByID } = useContext(PokemonContext);
@@ -22,9 +26,46 @@ export const PokemonPage = () => {
     return String(id).padStart(3, "0");
   };
 
+  const handleNext = () => {
+    const nextId = parseInt(id) + 1;
+    return nextId;
+  };
+
+  const handlePrevious = () => {
+    const previousId = parseInt(id) - 1;
+    return previousId;
+  };
+
+  const renderNavigationButtons = () => {
+    return (
+      <div className="button-nav">
+        {handlePrevious() > 0 && (
+          <Link
+            className="button-pokemon prev-button"
+            to={`/pokemon/${handlePrevious()}`}
+          >
+            <button className="button-arrow">
+              {" "}
+              <FaRegArrowAltCircleLeft />{" "}
+            </button>
+          </Link>
+        )}
+        {/* <span className="number-pokemon">#{pokemon.id}</span> */}
+        <Link
+          className="button-pokemon next-button"
+          to={`/pokemon/${handleNext()}`}
+        >
+          <button className="button-arrow">
+            {" "}
+            <FaRegArrowAltCircleRight />{" "}
+          </button>
+        </Link>
+      </div>
+    );
+  };
   useEffect(() => {
     fetchPokemon(id);
-  }, []);
+  }, [id]);
 
   const typeInfo = {
     normal: "Rock, Ghost, Steel",
@@ -58,6 +99,7 @@ export const PokemonPage = () => {
         <Loader />
       ) : (
         <>
+          {renderNavigationButtons()}
           <span className="number-pokemon">#{pokemon.id}</span>{" "}
           <div className="header-main-pokemon">
             <div className="container-img-pokemon">

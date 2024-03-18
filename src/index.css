@@ -35,9 +35,33 @@ body {
   font-family: "Montserrat";
   background-color: #1d1238;
 }
+.button-nav {
+  display: flex;
+}
+.button-pokemon {
+  margin: 0.5rem 2rem;
+}
+.button-arrow {
+  background: none;
+  border: none;
+  outline: none;
+  border-radius: 1.4rem;
+  padding: 0.7rem 0.9rem;
+  color: #fff;
+  background-color: #5636a7;
+  cursor: pointer;
+  font-weight: 500;
+  letter-spacing: 2px;
+  font-size: 20px;
+  box-shadow: #320064 0px 8px 24px;
+}
 
+.button-arrow:hover {
+  background-color: #5636a7;
+  color: #000;
+}
 .container {
-  max-width: 1200px;
+  max-width: 1300px;
   margin: 0 auto;
   display: flex;
   align-items: center;
