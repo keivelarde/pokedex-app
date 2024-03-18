@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-import { useParams, Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { Loader } from "../components";
 import { PokemonContext } from "../context/PokemonContext";
 import { primerMayuscula } from "../helper/helper";
@@ -26,17 +26,6 @@ export const PokemonPage = () => {
     fetchPokemon(id);
   }, []);
 
-  //   const getTypeInfo = (type) => {
-  //     switch (type) {
-  //       case "grass":
-  //         return "Information about Grass type...";
-  //       case "poison":
-  //         return "Information about Fire type...";
-  //       // Add cases for other types as needed
-  //       default:
-  //         return "Information not available";
-  //     }
-  //   };
   const typeInfo = {
     normal: "Rock, Ghost, Steel",
     fighting: "Flying, Poison, Psychic, Bug, Ghost, Fairy",
@@ -72,10 +61,6 @@ export const PokemonPage = () => {
           <span className="number-pokemon">#{pokemon.id}</span>{" "}
           <div className="header-main-pokemon">
             <div className="container-img-pokemon">
-              {/* <img
-								src={pokemon.sprites.other.dream_world.front_default}
-								alt={`Pokemon ${pokemon?.name}`}
-							/> */}
               <img
                 src={`https://assets.pokemon.com/assets/cms2/img/pokedex/full/${formatId(
                   pokemon.id
@@ -94,7 +79,6 @@ export const PokemonPage = () => {
               ))}
             </div>
 
-            {/* Display type information */}
             <div className="info-pokemon">
               <div className="group-info">
                 <p>Height</p>
@@ -118,7 +102,7 @@ export const PokemonPage = () => {
             <div className="stats">
               <div className="stat-group">
                 <span className="stat-label">Hp</span>
-                {/* <div className="progress-bar"></div> */}
+
                 <ProgressBar
                   className="progress-bar"
                   completed={pokemon.stats[0].base_stat.toString()}

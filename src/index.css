@@ -21,7 +21,6 @@
   --color-fairy: #fdb9e9;
   --color-shadow: #7b62a3;
   --color-unknow: #757575;
-
   --color-primary: #006d77;
   --color-primary-hover: #83c5be;
 }
@@ -36,7 +35,7 @@ body {
   font-family: "Montserrat";
   background-color: #1d1238;
 }
-/* Globales */
+
 .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -47,7 +46,7 @@ body {
 }
 @media (max-width: 768px) {
   .container {
-    justify-content: center; /* Make it full width on small devices */
+    justify-content: center;
   }
 }
 /* Header */
@@ -66,7 +65,6 @@ header {
 header form {
   display: flex;
   align-items: center;
-
   gap: 15px;
 }
 
@@ -74,16 +72,14 @@ header form {
   display: flex;
   align-items: center;
   gap: 10px;
-
   border: 1px solid #555;
   padding: 15px 20px;
   border-radius: 25px;
 }
 
 .form-group input {
-  /* padding: 15px 30px; */
   font-family: inherit;
-  /* width: 300px; */
+
   border: none;
   outline: none;
   font-size: 15px;
@@ -115,7 +111,6 @@ header form {
   color: #000;
 }
 
-/* Btn Filter */
 .container-filter {
   display: flex;
   justify-content: center;
@@ -127,7 +122,6 @@ header form {
   display: flex;
   align-items: center;
   gap: 15px;
-
   margin-bottom: 20px;
   cursor: pointer;
 }
@@ -138,7 +132,6 @@ header form {
   stroke: #fff;
 }
 
-/* Card List Pokemon */
 .card-list-pokemon {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -227,7 +220,6 @@ header form {
   color: #fff;
 }
 
-/* Types of Pokemon */
 .water {
   background-color: var(--color-water);
 }
@@ -354,12 +346,6 @@ header form {
   cursor: pointer;
 }
 
-/* 
-======================================= 
-Styles of Pokemon Single Page
-======================================= 
-*/
-
 .main-pokemon {
   display: flex;
   flex-direction: column;
@@ -378,12 +364,9 @@ Styles of Pokemon Single Page
 }
 
 .number-pokemon {
-  /* position: absolute;
-  top: -130px;
-  left: 0; */
   display: flex;
-  justify-content: center; /* Center content horizontally */
-  align-items: center; /* Center content vertically */
+  justify-content: center;
+  align-items: center;
   font-size: 50px;
   font-weight: 700;
   color: var(--color-primary-hover);
@@ -399,15 +382,13 @@ Styles of Pokemon Single Page
 }
 
 .container-img-pokemon {
-  /* order: 2; */
   flex: 1;
   padding: 25px 25px 25px 0;
-  /* height: 400px; */
-  /* Set the width to 40% of the viewport width */
+
   height: 320px;
   display: flex;
-  justify-content: center; /* Center content horizontally */
-  align-items: center; /* Center content vertically */
+  justify-content: center;
+  align-items: center;
 }
 
 .container-img-pokemon img {
@@ -416,11 +397,10 @@ Styles of Pokemon Single Page
 
 .container-info-pokemon {
   display: flex;
-  justify-content: center; /* Center content horizontally */
+  justify-content: center;
   align-items: center;
   flex-direction: column;
 
-  /* order: 1; */
   flex: 1;
 }
 
@@ -452,8 +432,8 @@ Styles of Pokemon Single Page
   padding: 1rem;
   display: flex;
   flex-direction: column;
-  align-items: center; /* Center horizontally */
-  justify-content: center; /* Center vertically */
+  align-items: center;
+  justify-content: center;
   color: #9eb7b8;
 }
 
@@ -465,27 +445,26 @@ Styles of Pokemon Single Page
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 1rem; /* Align h3 and p vertically */
+  gap: 1rem;
 }
 
 .weakness-pokemon h3 {
   max-width: 7rem;
   display: flex;
   align-items: center;
-  justify-content: center; /* Optional: Add spacing between h3 and p */
+  justify-content: center;
 }
 
 .weakness-pokemon p {
-  margin: 0; /* Optional: Remove default margin */
-  /* Align text to the center */
-  flex: 1; /* Take remaining space */
+  margin: 0;
+
+  flex: 1;
   max-width: 23rem;
 }
 
-/* Stats */
 .container-stats {
   display: flex;
-  justify-content: center; /* Center content horizontally */
+  justify-content: center;
   align-items: center;
   padding: 1rem;
   width: 100%;
@@ -494,7 +473,7 @@ Styles of Pokemon Single Page
 .progress-bar {
   width: 50%;
   height: 30px;
-  /* background-color: var(--color-primary); */
+
   border-radius: 10px;
 }
 .stats {
@@ -510,7 +489,7 @@ Styles of Pokemon Single Page
 }
 .stat-group {
   display: flex;
-  justify-content: center; /* Center content horizontally */
+  justify-content: center;
 
   gap: 20px;
 }
@@ -519,8 +498,6 @@ Styles of Pokemon Single Page
   font-weight: 500;
   font-size: 18px;
 }
-
-/* Search Page */
 
 .p-search {
   margin-bottom: 30px;
@@ -532,15 +509,11 @@ Styles of Pokemon Single Page
   font-weight: 700;
 }
 
-/* Loader */
-
 .container-loader {
   display: flex;
   justify-content: center;
   margin: 200px 0;
 }
-
-/* Btn Load More */
 
 .container-btn-load-more {
   display: flex;

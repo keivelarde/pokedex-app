@@ -14,10 +14,6 @@ export const SearchPage = () => {
 
   return (
     <div className="container">
-      {/* <p className='p-search'>
-				Se encontraron <span>{filteredPokemons.length}</span>{' '}
-				resultados:
-			</p> */}
       <div className="card-list-pokemon container">
         {filteredPokemons.map((pokemon) => (
           <CardPokemon pokemon={pokemon} key={pokemon.id} />
